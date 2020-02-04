@@ -12,22 +12,24 @@ type customer struct {
 	Name   string  `json:"name"`
 	Age    int     `json:"age"`
 	Height float32 `json:"height"`
+	Weight float32 `json:"weight"`
 }
 
 func main() {
 
 	//customer_details
 	customerData := customer{
-		Name:   "chamara",
+		Name:   "kusal",
 		Age:    34,
 		Height: 2.44,
+		Weight: 132.45,
 	}
 
 	byt, err := json.Marshal(customerData)
 
 	client, _ := schemaregistry.NewClient("localhost:8081")
 	//schema, _ := client.GetSchemaByID(10)
-	schema, _ := client.GetSchemaBySubject("customer_details", 1)
+	schema, _ := client.GetSchemaBySubject("customer_details", 2)
 
 	//fmt.Println(schema)
 
