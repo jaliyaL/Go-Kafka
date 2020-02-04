@@ -29,7 +29,7 @@ func main() {
 	//schema, _ := client.GetSchemaByID(10)
 	schema, _ := client.GetSchemaBySubject("customer_details", 1)
 
-	fmt.Println(schema)
+	//fmt.Println(schema)
 
 	codec, err := goavro.NewCodec(schema.Schema)
 	if err != nil {
